@@ -5,9 +5,25 @@
   background: skyblue;
 
 }
+.add-dog {
+  height: 10vh;
+  background: skyblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-dog-btn {
+  margin-top: 1vh;
+  width: 35vw;
+  font-size: 1em;
+  height: 5vh;
+  border-radius: 3em;
+}
 
 #good-dog-filter {
   margin-top: 1vh;
+  margin-bottom: 2vh;
   width: 35vw;
   font-size: 1em;
   height: 5vh;
@@ -50,4 +66,50 @@
 
 body {
   margin: 0;
+}
+
+.container {
+  padding: 1rem;
+  height: auto;
+  background: skyblue;
+}
+
+.hide {
+  display: none;
+}
+
+.add-dog-form {
+  width: 100%;
+  text-align: center;
+}
+
+.input-text {
+  border-radius: 5px;
+  height: 2rem;
+  width: 60%;
+  font-size: 18px;
+  margin: 3px;
+}
+
+.submit {
+  background-color: green; /* Green */
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background-color: red; /* Green */
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
 }
