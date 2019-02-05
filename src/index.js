@@ -18,7 +18,7 @@ const state = {
   selectedDog: null
 }
 
-const renderDog = function(pup) {
+function renderDog(pup) {
   const span = document.createElement('span');
   span.className = 'dogTag'
   span.dataset.id = pup.id
@@ -26,7 +26,7 @@ const renderDog = function(pup) {
   dogBarEl.appendChild(span);
 }
 
-const renderMultipleDogs = function(pups) {
+function renderMultipleDogs(pups) {
   dogBarEl.innerHTML = '';
   pups.forEach(pup => renderDog(pup))
 }
@@ -49,11 +49,18 @@ const renderMultipleDogs = function(pups) {
 
 // }
 
+// pup = {
+//   "id": 8,
+//   "name": "Mittens",
+//   "isGoodDog": true,
+//   "image": "http://evelynswinebar.com/wp-content/uploads/2018/06/dogpic.jpg"
+// }
+
 function showDogInfo(pup) {
   dogInfoEl.innerHTML =
-  `<img src="${pup.image}" />
+  `<img src=${pup.image} />
   <h2>${pup.name}</h2>
-  <button data-id="${pup.id}" class="good-or-bad-btn">${pup.isGoodDog ? "Good Dog!" : "Bad Dog!"}</button>
+  <button data-id=${pup.id} class="good-or-bad-btn">${pup.isGoodDog ? "Good Dog!" : "Bad Dog!"}</button>
   `
 }
 
@@ -89,10 +96,10 @@ function addFilterListener() {
 
 function updateDogBar() {
   if (state.filter) {
-    const goodDogs = state.dogs.filter(dog => dog.isGoodDog)
-    addDogTags(goodDogs)
+    const goodDogs = state.pups.filter(pup => pup.isGoodDog)
+    renderMultipleDogs(goodDogs)
   } else {
-    addDogTags(state.dogs)
+    renderMultipleDogs(state.pups)
   }
 }
 
